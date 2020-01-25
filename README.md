@@ -21,3 +21,4 @@ fn main() -> std::io::Result<()> {
 ## Future
 * [ ] Add `get_port_prefered`, used to supply (a list of) prefered port(s)
 * [ ] Add `get_port_except` to exclude certain port(s)
+* [ ] Write meaningful tests?
