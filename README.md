@@ -5,7 +5,7 @@
 
 ## Usage
 
-```rs
+```rust
 use get_port;
 
 fn main() -> std::io::Result<()> {
