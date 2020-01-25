@@ -1,0 +1,13 @@
+[package]
+name = "get-port"
+version = "1.0.0"
+authors = ["Carlos Menezes <carlos-menezes212@hotmail.com>"]
+description = "Get an available port"
+license = "MIT"
+edition = "2018"
+repository = "https://github.com/carlos-menezes/get-port"
+keywords = ["port", "network"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
