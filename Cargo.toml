@@ -1,6 +1,6 @@
 [package]
 name = "get-port"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Carlos Menezes <carlos-menezes212@hotmail.com>"]
 description = "Get an available port"
 license = "MIT"
