@@ -13,33 +13,13 @@ impl Default for PortRange {
     }
 }
 
-pub fn get_port_in_range(range: PortRange) -> u16 {
-    let mut port: u16 = range.min;
-
-    for p in range.min..range.max {
-        let port_available = check_port_available(&p);
-        if port_available {
-            port = p;
-            break;
-        }
-    }
-
-    return port;
+pub fn get_port_in_range(range: PortRange) -> Option<u16> {
+    return (range.min..range.max).filter(|p| check_port_available(&p)).nth(0); 
 }
 
 
-pub fn get_port() -> u16 {
-    let range = PortRange::default();
-    let mut port: u16 = range.min;
-
-    for i in range.min..range.max {
-        let available = check_port_available(&i);
-        if available {
-            port = i;
-        }
-    }
-
-    return port;
+pub fn get_port() -> Option<u16> {
+    return get_port_in_range(PortRange::default());
 }
 
 fn check_port_available(port: &u16) -> bool {
