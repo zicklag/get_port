@@ -3,8 +3,8 @@ use std::net::{ TcpListener, Ipv4Addr };
 
 #[derive(Debug)]
 pub struct PortRange {
-    min: u16,
-    max: u16
+    pub min: u16,
+    pub max: u16
 }
 
 impl Default for PortRange {
