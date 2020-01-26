@@ -10,7 +10,7 @@ use get_port;
 
 fn main() {
     let an_available_port = get_port::get_port().unwrap(); // Returns the first available port in default range
-    let an_available_port_in_range = get_port::get_port_in_range(get_port::Range { min: 5000, max: 6000 }).unwrap(); // Returns the first available port in speciefied range
+    let an_available_port_in_range = get_port::get_port_in_range(get_port::PortRange { min: 5000, max: 6000 }).unwrap(); // Returns the first available port in speciefied range
 
     // ...
 }
