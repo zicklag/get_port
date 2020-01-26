@@ -34,13 +34,13 @@ mod tests {
     use super::*;
     #[test]
     fn test_gpir() {
-        let port = get_port_in_range(PortRange { min: 1337, max: 6000 } );
+        let port = get_port_in_range(PortRange { min: 1337, max: 6000 } ).unwrap();
         assert_eq!(port, 1337);
     }
 
     #[test]
     fn test_gp() {
-        let port = get_port();
+        let port = get_port().unwrap();
         assert_ne!(port, 0);
     }
 }
