@@ -5,17 +5,34 @@
 
 ## Usage
 
+#### * Get the first available port in range 1024 <-> 65535
 ```rust
 use get_port;
 
 fn main() {
-    let an_available_port = get_port::get_port().unwrap(); // Returns the first available port in default range
-    let an_available_port_in_range = get_port::get_port_in_range(get_port::PortRange { min: 5000, max: 6000 }).unwrap(); // Returns the first available port in speciefied range
-
-    // ...
+    let port = get_port::get_port().unwrap();
 }
 ```
 
+#### * Get a port in a specific range
+
+```rust
+use get_port;
+
+fn main() {
+    let port = get_port::get_port_in_range(get_port::PortRange { min: 5000, max: 6000 }).unwrap();
+}
+```
+
+#### * Check if specific port(s) is/are available, returning the first one or falling back to an available port in range 1024 <-> 65535
+
+```rust
+use get_port;
+
+fn main() {
+    let port = get_port::get_port_prefer(vec![20, 60, 6943]).unwrap(); // Will return 6943 if available, as 0 <-> 1024 are system ports.
+}
+```
 ---
 
 ## Future
