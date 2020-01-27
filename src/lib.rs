@@ -22,25 +22,19 @@ pub fn get_port() -> Option<u16> {
     return get_port_in_range(PortRange::default());
 }
 
+pub fn get_port_prefer(ports: Vec<u16>) -> Option<u16> {
+    let port = ports.into_iter().filter(|p| check_port_available(&p)).nth(0);
+
+    if port.is_some() {
+       return port;
+    } else {
+       return get_port();
+    }
+}
+
 fn check_port_available(port: &u16) -> bool {
     match TcpListener::bind((Ipv4Addr::LOCALHOST, *port)) {
         Ok(_) => return true,
         Err(_) => return false
     };
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test_gpir() {
-        let port = get_port_in_range(PortRange { min: 1337, max: 6000 } ).unwrap();
-        assert_eq!(port, 1337);
-    }
-
-    #[test]
-    fn test_gp() {
-        let port = get_port().unwrap();
-        assert_ne!(port, 0);
-    }
 }
