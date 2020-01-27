@@ -19,6 +19,8 @@ fn main() {
 ---
 
 ## Future
-* [ ] Add `get_port_prefered`, used to supply (a list of) prefered port(s)
+* [x] Add `get_port_prefer`, used to supply (a list of) prefered port(s)
+    - falls back to `get_port` (which runs a boundless port availability check through PortRange::default())
+        - * [ ] Add `get_port_prefer_or_range`
 * [ ] Add `get_port_except` to exclude certain port(s)
 * [ ] Write meaningful tests?
