@@ -5,7 +5,7 @@ authors = ["Carlos Menezes <carlos-menezes212@hotmail.com>"]
 description = "Get an available port"
 license = "MIT"
 edition = "2018"
-repository = "https://github.com/carlos-menezes/get-port"
+repository = "https://github.com/carlos-menezes/get_port"
 keywords = ["port", "network"]
 readme = "README.md"
 
