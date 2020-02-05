@@ -16,6 +16,8 @@ fn main() {
 
 #### * Get a port in a specific range
 
+> **Note:** The `max` value in a port range is non-inclusive so the highest port number that will be searched in the example below is `5999`.
+
 ```rust
 use get_port;
 
